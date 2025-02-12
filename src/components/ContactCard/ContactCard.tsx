@@ -1,7 +1,22 @@
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { Logo } from '@/components/Logo/Logo'
-import { CopyButton } from './CopyButton'
+import { CopyContainer } from './CopyContainer'
+import { ArrowUpRight } from 'lucide-react'
+
+const SocialLink = ({ href, label }: { href: string; label: string }) => {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-foreground/70 text-sm hover:text-foreground transition-colors flex items-center group"
+    >
+      {label}{' '}
+      <ArrowUpRight className="w-4 h-4 opacity-40 group-hover:opacity-90 transition-opacity" />
+    </a>
+  )
+}
 
 export const ContactCard = async () => {
   const payload = await getPayload({ config: configPromise })
@@ -28,41 +43,15 @@ export const ContactCard = async () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-white">{email}</span>
-          <CopyButton email={email} />
+          <CopyContainer text={email} />
         </div>
 
         <div className="flex gap-4">
-          {socialMedia?.linkedin && (
-            <a
-              href={socialMedia.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-stone-300 transition-colors"
-            >
-              LinkedIn
-            </a>
-          )}
+          {socialMedia?.linkedin && <SocialLink href={socialMedia.linkedin} label="Linkedin" />}
 
-          {socialMedia?.github && (
-            <a
-              href={socialMedia.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-stone-300 transition-colors"
-            >
-              GitHub
-            </a>
-          )}
+          {socialMedia?.github && <SocialLink href={socialMedia.github} label="GitHub" />}
 
-          <a
-            href="/resume"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-stone-300 transition-colors"
-          >
-            My Resume
-          </a>
+          <SocialLink href="https://link.mpires.dev/resume" label="My Resume" />
         </div>
       </div>
     </div>
