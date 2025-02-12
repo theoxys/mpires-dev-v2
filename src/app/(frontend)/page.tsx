@@ -4,6 +4,7 @@ import { WorkingExperience } from '@/components/Experience/WorkingExperience'
 import { BgLight } from '@/components/BackgroundLight/BgLight'
 import { ServicesGrid } from '@/components/ServicesGrid/ServicesGrid'
 import { BlogPosts } from '@/components/BlogPosts/BlogPosts'
+import { ContactCard } from '@/components/ContactCard/ContactCard'
 export { generateMetadata }
 
 export default function Page() {
@@ -29,6 +30,7 @@ export default function Page() {
         <WorkingExperience />
         <ServicesGrid />
         <BlogPosts />
+        <ContactCard />
       </div>
     </article>
   )
