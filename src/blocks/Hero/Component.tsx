@@ -12,7 +12,7 @@ export const HeroBlock: React.FC<Props> = ({ className, title, description, imag
   return (
     <div className={cn('mx-auto my-8 w-full max-w-[900px]', className)}>
       <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="w-32 h-32 md:w-32 md:h-32 rounded-full overflow-hidden flex-shrink-0">
+        <div className="w-32 h-32 md:w-32 md:h-32 rounded-full overflow-hidden shrink-0">
           {image && <Media resource={image} className="w-full h-full object-cover" />}
         </div>
         <div className="flex-1">

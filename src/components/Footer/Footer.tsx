@@ -67,8 +67,8 @@ export const FooterColumn = ({ columnName, links }: FooterColumnProps) => {
 export const Footer = () => {
   const year = new Date().getFullYear()
   return (
-    <div className="flex flex-col gap-12 items-center w-full min-h-[350px] border-t border-border relative justify-center bg-stone-950">
-      <div className="absolute w-[80rem] h-[1px] bg-gradient-to-r from-transparent via-stone-600 to-transparent top-0"></div>
+    <div className="flex flex-col gap-12 items-center w-full min-h-[350px] border-t border-border relative justify-center bg-surface">
+      <div className="absolute w-[80rem] h-[1px] bg-linear-to-r from-transparent via-surface to-transparent top-0"></div>
 
       <div className="flex gap-4 w-full max-w-[900px] py-10 min-h-full justify-between">
         <div className="flex flex-col gap-4 w-[250px] min-h-full">

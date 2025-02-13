@@ -52,7 +52,7 @@ export const ServicesGrid = () => {
     <div className="flex flex-col gap-4 w-full items-center justify-center">
       <span className="text-xs tracking-widest text-stone-500 align-middle uppercase">skills</span>
       <h1 className="text-4xl font-semibold">My Expertise</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 w-full mx-auto border-l border-t border-dashed border-border [&>*]:border-dashed [&>*]:border-b [&>*]:border-r [&>*]:border-border">
+      <div className="grid grid-cols-1 md:grid-cols-2 w-full mx-auto border-l border-t border-dashed border-border *:border-dashed *:border-b *:border-r *:border-border">
         {services.map((service, index) => (
           <ServiceItem
             key={index}

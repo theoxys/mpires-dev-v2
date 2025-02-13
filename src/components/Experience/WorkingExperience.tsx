@@ -50,7 +50,7 @@ const TimelineItem: FC<{
         <div className="flex max-h-8 max-w-8 w-8 h-full rounded-full border border-stone-700 bg-stone-500/10 items-center justify-center shadow-lg shadow-stone-500/20">
           <Laptop size={14} className="text-white" />
         </div>
-        <div className="w-[1px] h-full bg-gradient-to-t from-stone-900/40 to-stone-800"></div>
+        <div className="w-[1px] h-full bg-linear-to-t from-stone-900/40 to-stone-800"></div>
       </aside>
       <section className="flex flex-col gap-2 pb-8">
         <div className="h-8">

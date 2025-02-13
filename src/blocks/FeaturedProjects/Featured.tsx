@@ -185,8 +185,8 @@ const FeaturedProjects = ({ projects }: { projects: FeaturedProject[] }) => {
                     `flex flex-col gap-4px p-12px rounded-8px`,
                     `transition-all ease-in-out duration-300`,
                     `absolute z-20 left-8px right-8px bottom-8px sm:left-auto sm:right-8px`,
-                    `bg-gradient-to-br from-neutral-100/80 to-neutral-100`,
-                    `backdrop-blur-sm`,
+                    `bg-linear-to-br from-neutral-100/80 to-neutral-100`,
+                    `backdrop-blur-xs`,
                     `${
                       activeIndex === i
                         ? 'opacity-100 translate-y-0px'
@@ -247,7 +247,7 @@ const TextOverlayBG = () => {
   const styles = cva([
     'w-full h-[30%] sm:w-[120%] sm:h-[120px] sm:-rotate-6 rounded-tl-24px',
     'absolute bottom-0px right-[0px] sm:-bottom-[20px] sm:-right-[30px] z-10',
-    'bg-gradient-to-br from-neutral-100/20 to-neutral-100',
+    'bg-linear-to-br from-neutral-100/20 to-neutral-100',
     'blur-[30px]',
   ])
 

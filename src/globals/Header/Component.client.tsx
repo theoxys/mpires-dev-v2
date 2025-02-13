@@ -41,12 +41,12 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-        isScrolled ? 'bg-[#0D0D0E]/70 border-b border-border backdrop-blur-2xl shadow-sm' : ''
-      }`}
-      {...(theme ? { 'data-theme': theme } : {})}
+      className={cn(
+        'w-full fixed top-0 left-0 right-0 z-50 transition-all duration-200 border-border',
+        isScrolled && 'bg-background/70 border-b backdrop-blur-2xl shadow-xs',
+      )}
     >
-      <div className="container px-4 overflow-x-hidden">
+      <div className="container px-4 overflow-x-hidden w-full mx-auto">
         <div
           className={cn(
             'max-w-[900px] mx-auto flex justify-between items-center transition-all ease-in-out duration-200',
