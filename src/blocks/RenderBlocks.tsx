@@ -6,14 +6,12 @@ import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
 import { ContentBlock } from '@/blocks/Content/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { HeroBlock } from '@/blocks/Hero/Component'
-import { Timeline } from '@/blocks/Timeline/Timeline'
 
 const blockComponents = {
   archive: ArchiveBlock,
   content: ContentBlock,
   formBlock: FormBlock,
   hero: HeroBlock,
-  timeline: Timeline,
 }
 
 export const RenderBlocks: React.FC<{

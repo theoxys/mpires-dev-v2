@@ -21,7 +21,6 @@ export interface Config {
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
-    search: Search;
     'payload-jobs': PayloadJob;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -39,7 +38,6 @@ export interface Config {
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
-    search: SearchSelect<false> | SearchSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -100,7 +98,7 @@ export interface UserAuthOperations {
 export interface Page {
   id: string;
   title: string;
-  layout: (ContentBlock | ArchiveBlock | FormBlock | HeroBlock | TimelineBlock)[];
+  layout: (ContentBlock | ArchiveBlock | FormBlock | HeroBlock)[];
   meta?: {
     title?: string | null;
     /**
@@ -616,22 +614,6 @@ export interface HeroBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "TimelineBlock".
- */
-export interface TimelineBlock {
-  professionalExperience: {
-    companyName?: string | null;
-    workingDate?: string | null;
-    description?: string | null;
-    logo?: (string | null) | Media;
-    id?: string | null;
-  }[];
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'timeline';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "projects".
  */
 export interface Project {
@@ -769,36 +751,6 @@ export interface FormSubmission {
         field: string;
         value: string;
         id?: string | null;
-      }[]
-    | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "search".
- */
-export interface Search {
-  id: string;
-  title?: string | null;
-  priority?: number | null;
-  doc: {
-    relationTo: 'posts';
-    value: string | Post;
-  };
-  slug?: string | null;
-  meta?: {
-    title?: string | null;
-    description?: string | null;
-    image?: (string | null) | Media;
-  };
-  categories?:
-    | {
-        relationTo?: string | null;
-        id?: string | null;
-        title?: string | null;
       }[]
     | null;
   updatedAt: string;
@@ -944,10 +896,6 @@ export interface PayloadLockedDocument {
         value: string | FormSubmission;
       } | null)
     | ({
-        relationTo: 'search';
-        value: string | Search;
-      } | null)
-    | ({
         relationTo: 'payload-jobs';
         value: string | PayloadJob;
       } | null);
@@ -1006,7 +954,6 @@ export interface PagesSelect<T extends boolean = true> {
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
         hero?: T | HeroBlockSelect<T>;
-        timeline?: T | TimelineBlockSelect<T>;
       };
   meta?:
     | T
@@ -1082,23 +1029,6 @@ export interface HeroBlockSelect<T extends boolean = true> {
   description?: T;
   image?: T;
   waveEmoji?: T;
-  id?: T;
-  blockName?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "TimelineBlock_select".
- */
-export interface TimelineBlockSelect<T extends boolean = true> {
-  professionalExperience?:
-    | T
-    | {
-        companyName?: T;
-        workingDate?: T;
-        description?: T;
-        logo?: T;
-        id?: T;
-      };
   id?: T;
   blockName?: T;
 }
@@ -1487,32 +1417,6 @@ export interface FormSubmissionsSelect<T extends boolean = true> {
         field?: T;
         value?: T;
         id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "search_select".
- */
-export interface SearchSelect<T extends boolean = true> {
-  title?: T;
-  priority?: T;
-  doc?: T;
-  slug?: T;
-  meta?:
-    | T
-    | {
-        title?: T;
-        description?: T;
-        image?: T;
-      };
-  categories?:
-    | T
-    | {
-        relationTo?: T;
-        id?: T;
-        title?: T;
       };
   updatedAt?: T;
   createdAt?: T;

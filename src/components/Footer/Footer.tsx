@@ -1,4 +1,6 @@
 import { GitBranchPlus } from 'lucide-react'
+import { GithubStarButton } from './GithubStarButton'
+import { Logo } from '../Logo/Logo'
 
 export const footerColumns: FooterColumnProps[] = [
   {
@@ -70,11 +72,13 @@ export const Footer = () => {
 
       <div className="flex gap-4 w-full max-w-[900px] py-10 min-h-full justify-between">
         <div className="flex flex-col gap-4 w-[250px] min-h-full">
+          <Logo className="w-10 opacity-40" />
           <h2 className="text-sm text-foreground/70">Made With ❤️ in Minas Gerais | Brazil</h2>
 
           <span className="text-sm text-foreground/70">
             This portfolio is an open source project and available for community!
           </span>
+          <GithubStarButton />
         </div>
 
         {footerColumns.map((column, index) => (
