@@ -1,8 +1,8 @@
 import { FC, SVGProps } from 'react'
 
 export const HtmlIcon: FC<SVGProps<SVGSVGElement>> = ({
-  stroke = 'rgba(255, 255, 255, 0.3)',
-  fill = 'rgba(255, 255, 255, 0.1)',
+  stroke = 'hsl(var(--black) / 0.3)',
+  fill = 'hsl(var(--black) / 0.1)',
   ...props
 }) => {
   return (

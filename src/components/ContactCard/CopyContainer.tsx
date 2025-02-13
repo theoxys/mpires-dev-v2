@@ -25,11 +25,11 @@ export const CopyContainer = ({ text, className, ...props }: CopyContainerProps)
 
   return (
     <div
-      className={cn('flex h-10 items-center border rounded-xl bg-foreground/5', className)}
+      className={cn('flex h-10 items-center border border-border rounded-xl bg-element', className)}
       {...props}
     >
       <div
-        className="flex-1 px-3 py-2 select-all cursor-default border-r-2 border-border text-foreground/70"
+        className="flex-1 px-3 py-2 select-all cursor-default border-r-2  border-border text-neutral/70"
         role="textbox"
         aria-readonly="true"
       >
@@ -37,9 +37,9 @@ export const CopyContainer = ({ text, className, ...props }: CopyContainerProps)
       </div>
       <button
         onClick={copyText}
-        className="px-3 h-full grow hover:bg-white/10 rounded-r-xl transition-colors"
+        className="px-3 h-full grow hover:bg-neutral/10 rounded-r-xl transition-colors cursor-pointer"
       >
-        {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+        {copied ? <Check className="h-4 w-4 text-green-400" /> : <Copy className="h-4 w-4" />}
       </button>
     </div>
   )

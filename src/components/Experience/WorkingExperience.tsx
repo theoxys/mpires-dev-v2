@@ -47,10 +47,10 @@ const TimelineItem: FC<{
   return (
     <div className="flex gap-2 max-w-lg h-full">
       <aside className="flex flex-col items-center gap-2">
-        <div className="flex max-h-8 max-w-8 w-8 h-full rounded-full border border-stone-700 bg-stone-500/10 items-center justify-center shadow-lg shadow-stone-500/20">
-          <Laptop size={14} className="text-white" />
+        <div className="flex max-h-8 max-w-8 w-8 h-full rounded-full border border-border bg-surface items-center justify-center shadow-lg shadow-stone-500/20">
+          <Laptop size={14} className="text-neutral" />
         </div>
-        <div className="w-[1px] h-full bg-linear-to-t from-stone-900/40 to-stone-800"></div>
+        <div className="w-[1px] h-full bg-linear-to-t from-transparent via-border to-border"></div>
       </aside>
       <section className="flex flex-col gap-2 pb-8">
         <div className="h-8">
@@ -58,7 +58,7 @@ const TimelineItem: FC<{
             {formatWorkingDate(startDate, endDate, isCurrentJob || false)}
           </span>
         </div>
-        <div className="flex gap-4 border border-stone-800 rounded-2xl p-4 bg-stone-700/10">
+        <div className="flex gap-4 border border-border rounded-2xl p-4 bg-surface">
           <div className="relative h-[36px] w-[36px] mt-1 min-w-[36px]">
             {companyLogo && typeof companyLogo !== 'string' && (
               <Image
@@ -72,7 +72,7 @@ const TimelineItem: FC<{
           </div>
           <div className="flex flex-col gap-2">
             <h1 className="text-md font-semibold">{companyName}</h1>
-            <p className="text-sm font-light text-stone-300">{summary}</p>
+            <p className="text-sm font-light text-neutral/70">{summary}</p>
           </div>
         </div>
       </section>
@@ -86,11 +86,11 @@ export const WorkingExperience: FC = async () => {
   return (
     <div className="flex flex-col md:flex-row gap-1 w-full justify-between">
       <div className="flex flex-col gap-4">
-        <span className="text-xs tracking-widest text-stone-500 align-middle uppercase">
+        <span className="text-xs tracking-widest text-neutral/70 align-middle uppercase">
           Timeline
         </span>
         <h1 className="text-4xl font-semibold">Working Experience</h1>
-        <p className="text-lg font-light text-stone-300">
+        <p className="text-lg font-light text-neutral/70">
           Here are some of the companies I have worked for.
         </p>
       </div>

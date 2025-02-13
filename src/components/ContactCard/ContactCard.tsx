@@ -4,6 +4,7 @@ import { Logo } from '@/components/Logo/Logo'
 import { CopyContainer } from './CopyContainer'
 import { ArrowUpRight } from 'lucide-react'
 import { cn } from '@/utilities/ui'
+import { CardPattern } from './CardPattern'
 
 const SocialLink = ({ href, label }: { href: string; label: string }) => {
   return (
@@ -30,24 +31,20 @@ export const ContactCard = async () => {
 
   return (
     <div className="flex flex-col gap-4 w-full items-center justify-center">
-      <span className="text-xs tracking-widest text-stone-500 align-middle uppercase">contact</span>
+      <span className="text-xs tracking-widest text-neutral/70 align-middle uppercase">
+        contact
+      </span>
       <h2 className="text-4xl font-semibold">Get in Touch</h2>
 
-      <div className="relative w-full py-12 bg-stone-900 rounded-2xl flex flex-col items-center gap-4 border border-border">
-        <div
-          className={cn(
-            'absolute top-0 flex bg-repeat z-30 opacity-[1%] rounded-lg m-[2px]',
-            'w-full h-full z-10 pointer-events-none',
-          )}
-          style={{ backgroundImage: 'url("/media/card-pattern.svg")' }}
-        />
-        <Logo className="w-20 h-20" />
+      <div className="relative w-full py-12 bg-surface rounded-2xl flex flex-col items-center gap-4 border border-border">
+        <CardPattern />
+        <Logo className="w-20 h-20 text-neutral" />
 
         <div className="flex flex-col gap-1 items-center z-20">
-          <h3 className="text-4xl font-semibold text-white">
+          <h3 className="text-4xl font-semibold text-neutral">
             {firstName} {lastName}
           </h3>
-          <span className="text-sm text-stone-400 uppercase">{jobTitle}</span>
+          <span className="text-sm text-neutral/70 uppercase">{jobTitle}</span>
         </div>
 
         <div className="flex items-center gap-2 z-20">
